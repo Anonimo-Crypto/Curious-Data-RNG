@@ -1,0 +1,27 @@
+{
+  "name": "Curious Data RNG",
+  "short_name": "CuriousRNG",
+  "description": "Generador de datos curiosos con animaciones sci-fi, verificación AES y protección de integridad",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#050a08",
+  "theme_color": "#00ff9d",
+  "icons": [
+    {
+      "src": "./icons/192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "entertainment"],
+  "lang": "es"
+}

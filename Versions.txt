@@ -1,0 +1,60 @@
+Curious Data RNG - Registro de versiones
+========================================
+
+Formato: MAJOR.MINOR.PATCH
+
+----------------------------------------
+2.1.0  (2026-08-03)
+----------------------------------------
+• Modo dual local / GitHub
+  - Local (file://): descarga manual desde data.html + botón cargar en index.html
+  - GitHub/servidor (http/https): index lee data/data.json solo; sin botón manual
+  - data.html muestra instrucciones según el modo
+
+----------------------------------------
+2.0.2  (2026-08-03)
+----------------------------------------
+• Carga manual de data.json en móvil (file picker)
+  - Chrome en file:// no puede hacer fetch a la carpeta data/
+  - Botón "Cargar data.json cifrado" para elegir el archivo descargado
+  - Mismo descifrado AES-128
+
+----------------------------------------
+2.0.1  (2026-08-03)
+----------------------------------------
+• Fix crítico: service worker ya NO cachea data.json (evita 404 fantasma)
+• Mejor diagnóstico de carga (logs + mensajes de bytes/estado)
+• Detecta si data.json se subió en texto plano en vez de binario cifrado
+• Mensajes de estado más claros cuando no hay datos
+
+----------------------------------------
+2.0.0  (2026-08-03)
+----------------------------------------
+Cambio mayor del sistema de datos:
+
+• Eliminado keys.bin (obsoleto)
+• Todos los datos viven en un único data.json cifrado
+  - Contenido = binario AES-128-GCM (IV + ciphertext)
+  - Al cargar: barra de progreso mientras se lee el binario y se descifra
+  - Si el archivo está corrupto o no se puede descifrar → bloqueo
+
+• Carpeta data/ vacía por defecto (sin datos de ejemplo)
+• Mensaje de localStorage eliminado
+• Carta con scroll real para datos largos (altura adaptable)
+• data.html cifra el dataset completo al guardar
+• Revisión general de interfaz y flujo de carga
+
+----------------------------------------
+1.2.0  (2026-08-03)
+----------------------------------------
+• Secciones con título + viñetas ilimitadas
+
+----------------------------------------
+1.1.0  (2026-08-03)
+----------------------------------------
+• Sonidos Web Audio API
+
+----------------------------------------
+1.0.x  (2026-08-03)
+----------------------------------------
+• PWA inicial + verificación con keys.bin
