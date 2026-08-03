@@ -1,0 +1,35 @@
+Curious Data RNG - Registro de versiones
+========================================
+
+Formato: MAJOR.MINOR.PATCH
+
+----------------------------------------
+3.0.0  (2026-08-03)
+----------------------------------------
+Reestructuración completa:
+
+• Nuevo index.html = hub de entrada
+  - Fade-in / barra de carga / fade-out
+  - Verifica e integridad de data.json (AES-128)
+  - Si hay modificación/corrupción → bloqueo
+  - Menú: elegir RNG.html o data.html
+
+• RNG.html (antes index de juego)
+  - Solo generador + cartas
+  - Sin animaciones de intro
+  - css/rng.css + js/rng.js
+
+• data.html
+  - css/data.css + js/data.js
+
+• js/crypto.js compartido (AES-128, sesión verificada)
+
+----------------------------------------
+2.1.0 / 2.0.x
+----------------------------------------
+• Modo local vs GitHub, carga manual, AES único archivo
+
+----------------------------------------
+1.x
+----------------------------------------
+• PWA, sonidos, secciones con viñetas

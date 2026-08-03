@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Añadir Dato · Curious Data RNG</title>
+  <link rel="stylesheet" href="./css/data.css">
+</head>
+<body>
+  <div class="container">
+    <a class="back-link" href="./index.html">← Menú principal</a>
+    <h1>Añadir Dato</h1>
+    <p class="subtitle">Curious Data RNG · Título · Descripción · Secciones con viñetas</p>
+    <div id="mode-banner"></div>
+
+    <label>Título</label>
+    <input id="title" type="text" placeholder="Ej: La Saliva Humana">
+
+    <label>Descripción (hecho principal)</label>
+    <textarea id="fact" placeholder="Texto introductorio del dato..."></textarea>
+
+    <label>Tag (categoría)</label>
+    <input id="tag" type="text" placeholder="Biología, Astronomía, Física...">
+
+    <div class="sections-area">
+      <div class="head">
+        <span>SECCIONES</span>
+        <button class="btn" type="button" onclick="addSection()">+ Añadir sección</button>
+      </div>
+      <div id="sections-root"></div>
+    </div>
+
+    <button class="btn btn-primary" id="save-btn" type="button" onclick="saveData()">GUARDAR Y DESCARGAR data.json</button>
+    <p class="meta" id="count-meta"></p>
+
+    <div class="info" id="info-box">
+      <strong>Cifrado:</strong> AES-128-GCM · un solo archivo <code>data.json</code> binario.<br>
+      Si se modifica el archivo, el menú principal bloqueará el acceso.
+    </div>
+  </div>
+
+  <script src="./js/crypto.js"></script>
+  <script src="./js/data.js"></script>
+</body>
+</html>

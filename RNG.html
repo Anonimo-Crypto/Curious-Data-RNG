@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RNG · Curious Data</title>
+  <meta name="theme-color" content="#00ff9d">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/192.png">
+  <link rel="stylesheet" href="./css/rng.css">
+</head>
+<body>
+  <a id="back-btn" href="./index.html">← Menú</a>
+  <button id="sound-btn" title="Sonido on/off" aria-label="Alternar sonido">🔊</button>
+
+  <div id="lock-screen">
+    <div class="lock-box">
+      <h1>ACCESO BLOQUEADO</h1>
+      <p>No se pudieron cargar los datos de forma segura.</p>
+      <div class="reason" id="lock-reason"></div>
+      <p style="margin-top:24px; opacity:0.6; font-size:0.8rem;">
+        <a href="./index.html" style="color:#ffaaaa;">Volver al menú</a>
+      </p>
+    </div>
+  </div>
+
+  <div id="main-ui">
+    <div id="slot" class="slot">PRESIONA GENERAR</div>
+    <button id="generate">GENERAR</button>
+
+    <div class="empty-hint" id="empty-hint" style="display:none;">
+      <p>No hay datos cargados.</p>
+      <button id="pick-data-btn" type="button">Cargar data.json cifrado</button>
+      <input id="pick-data-input" type="file" accept=".json,application/octet-stream,*/*" style="display:none">
+    </div>
+
+    <div id="result-card" class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h2 id="tag-name"></h2>
+          <p>Toca para revelar el dato</p>
+        </div>
+        <div class="card-back">
+          <h2 id="fact-title"></h2>
+          <p class="desc" id="fact-text"></p>
+          <div id="fact-sections"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <script src="./js/crypto.js"></script>
+  <script src="./js/rng.js"></script>
+</body>
+</html>

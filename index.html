@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curious Data RNG</title>
+  <meta name="theme-color" content="#00ff9d">
+  <meta name="description" content="Generador de datos curiosos con animaciones sci-fi">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/192.png">
+  <link rel="apple-touch-icon" href="./icons/192.png">
+  <link rel="stylesheet" href="./css/hub.css">
+</head>
+<body>
+  <button id="sound-btn" title="Sonido on/off" aria-label="Alternar sonido">🔊</button>
+
+  <div id="lock-screen">
+    <div class="lock-box">
+      <h1>ACCESO BLOQUEADO</h1>
+      <p>Se detectó un problema de integridad en data.json.</p>
+      <div class="reason" id="lock-reason"></div>
+      <p style="margin-top:24px; opacity:0.6; font-size:0.8rem;">
+        Genera un data.json válido con data.html
+      </p>
+    </div>
+  </div>
+
+  <div id="intro">
+    <div class="neon-box"><h1>Developed By Oscar</h1></div>
+    <div class="loading-area">
+      <div class="loading-text" id="loading-text">Iniciando...</div>
+      <div class="progress-track"><div class="progress-bar" id="progress"></div></div>
+    </div>
+  </div>
+
+  <div id="menu">
+    <h2>Curious Data RNG</h2>
+    <p class="sub">Elige qué deseas abrir</p>
+
+    <button class="menu-btn" id="go-rng" type="button">
+      RNG
+      <small>Generador de datos curiosos</small>
+    </button>
+
+    <button class="menu-btn" id="go-data" type="button">
+      DATA
+      <small>Añadir y cifrar nuevos datos</small>
+    </button>
+
+    <div class="local-pick" id="local-pick">
+      <button id="pick-data-btn" type="button">Cargar data.json cifrado</button>
+      <input id="pick-data-input" type="file" accept=".json,application/octet-stream,*/*" style="display:none">
+    </div>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <script src="./js/crypto.js"></script>
+  <script src="./js/hub.js"></script>
+</body>
+</html>
